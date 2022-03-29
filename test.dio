@@ -54,7 +54,7 @@
                         <mxRectangle width="30" height="90" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="18" value="item_info&#10;item_status&#10;shipment_address&#10;delivery_date_id&#10;delivery-charge&#10;seller&#10;" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" vertex="1" parent="16">
+                <mxCell id="18" value="item_info&#10;item_status_id&#10;shipment_address_id&#10;delivery_date_id&#10;delivery-charge_id&#10;user&#10;" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" vertex="1" parent="16">
                     <mxGeometry x="30" width="150" height="90" as="geometry">
                         <mxRectangle width="150" height="90" as="alternateBounds"/>
                     </mxGeometry>
