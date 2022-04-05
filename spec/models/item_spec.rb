@@ -29,29 +29,29 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Item info can't be blank")
       end
       it "カテゴリーの情報が必須" do
-        @item.category_id = '---'
+        @item.category_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Category is not a number")
+        expect(@item.errors.full_messages).to include("Category must be other than 1")
       end
       it "商品の状態の情報が必須" do
-        @item.item_status_id = '---'
+        @item.item_status_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Item status is not a number")
+        expect(@item.errors.full_messages).to include("Item status must be other than 1")
       end
       it "配送料の負担の情報が必須" do
-        @item.delivery_charge_id = '---'
+        @item.delivery_charge_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Delivery charge is not a number")
+        expect(@item.errors.full_messages).to include("Delivery charge must be other than 1")
       end
       it "発送元の地域の情報が必須" do
-        @item.shipment_address_id = '---'
+        @item.shipment_address_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Shipment address is not a number")
+        expect(@item.errors.full_messages).to include("Shipment address must be other than 1")
       end
       it "発送までの日数の情報が必須" do
-        @item.delivery_date_id = '---'
+        @item.delivery_date_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Delivery date is not a number")
+        expect(@item.errors.full_messages).to include("Delivery date must be other than 1")
       end
       it "価格の情報が必須" do
         @item.price = ''
@@ -67,6 +67,16 @@ RSpec.describe Item, type: :model do
         @item.price = '10000000'
         @item.valid?
         expect(@item.errors.full_messages).to include("Price must be less than or equal to 9999999")
+      end
+      it "価格に半角数字以外が含まれている場合は出品できない" do
+        @item.price = 'aaa'
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Price is not a number")
+      end
+      it "userが紐付いていなければ出品できない" do
+        @item.user = nil
+        @item.valid?
+        expect(@item.errors.full_messages).to include("User must exist")
       end
     end
   end
