@@ -34,7 +34,7 @@ class ItemsController < ApplicationController
     end
   end
 
-  def destory
+  def destroy
     @item.destroy
     redirect_to root_path
   end
