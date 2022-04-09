@@ -53,12 +53,12 @@
 
 | Column                  | Type       | Options                        |
 | ----------------------- | ---------- | ------------------------------ |
-| post_code               | Integer    | null: false                    |
-| city_id                 | Integer    | null: false                    |
+| post_code               | string     | null: false                    |
+| city                    | string     | null: false                    |
 | shipment_address_id     | Integer    | null: false                    |
 | address                 | string     | null: false                    |
 | building                | string     |                                |
-| phone_number            | Integer    | null: false                    |
+| phone_number            | string     | null: false                    |
 | buy                     | references | null: false, foreign_key: true |
 
 ### Association
