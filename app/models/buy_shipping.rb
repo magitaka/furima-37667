@@ -9,10 +9,9 @@ class BuyShipping
     validates :address
     validates :phone_number,format: {with: /\A\d{10,11}\z/, message: "is invalid."}
   end
-    validates :building
 
   def save
     buy = Buy.create(user_id: user_id, item_id: item_id)
-    Shipping.create(post_code: post_code, city: city, shipment_address_id: shipment_address_id address: address, building: building, phone_number: phone_number, buy_id: buy.id)
+    Shipping.create(post_code: post_code, city: city, shipment_address_id: shipment_address_id, address: address, building: building, phone_number: phone_number, buy_id: user_id)
   end
 end
