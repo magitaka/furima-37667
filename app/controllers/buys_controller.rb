@@ -1,9 +1,8 @@
 class BuysController < ApplicationController
   before_action :authenticate_user!, only: [:index]
+  before_action :buy_match
   before_action :user_check, only: [:index]
   before_action :sold_check, only: [:index]
-  before_action :buy_match
-  before_action :sold_match, only: [:user_check, :sold_check]
   
   def index
     @buy_shipping = BuyShipping.new
@@ -49,9 +48,5 @@ class BuysController < ApplicationController
 
   def buy_match
     @item = Item.find(params[:item_id])
-  end
-
-  def sold_match
-    item = Item.find(params[:item_id])
   end
 end
