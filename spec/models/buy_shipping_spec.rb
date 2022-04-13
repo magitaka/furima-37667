@@ -61,7 +61,7 @@ RSpec.describe BuyShipping, type: :model do
         expect(@buy_shipping.errors.full_messages).to include("Phone number is invalid.")
       end
       it "電話番号は、半角数字以外が含まれている場合、登録できないこと" do
-        @buy_shipping.phone_number = "0000000000000"
+        @buy_shipping.phone_number = "０００００００００００"
         @buy_shipping.valid?
         expect(@buy_shipping.errors.full_messages).to include("Phone number is invalid.")
       end
