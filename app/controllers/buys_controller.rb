@@ -35,12 +35,14 @@ class BuysController < ApplicationController
   end
 
   def user_check
+    item = Item.find(params[:item_id])
     if item.user_id == current_user.id
       redirect_to root_path
     end
   end
 
   def sold_check
+    item = Item.find(params[:item_id])
     unless item.buy.nil?
       redirect_to root_path
     end
