@@ -5,7 +5,6 @@ RSpec.describe Item, type: :model do
     @item = FactoryBot.build(:item)
   end
 
-
   describe "出品登録" do
     context '出品登録できるとき' do
       it '問題なく登録できる' do
